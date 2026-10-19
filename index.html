@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portofolio — Alifya Deswinta Putri Santoso</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f6f1ea;
+      --ink: #3d342c;
+      --muted: #7a6e64;
+      --line: #eadfd4;
+      --sage: #c9d5c4;
+      --sky: #c9d7e4;
+      --sand: #efe4d4;
+      --peach: #f3d7c8;
+      --card: rgba(255, 250, 245, 0.82);
+      --shadow: 0 18px 40px rgba(90, 68, 50, 0.08);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Outfit", sans-serif;
+      background:
+        radial-gradient(900px 500px at 8% -10%, #f8e4d8 0%, transparent 55%),
+        radial-gradient(800px 480px at 100% 8%, #dce8df 0%, transparent 50%),
+        radial-gradient(700px 420px at 70% 100%, #e4eaf2 0%, transparent 45%),
+        var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1080px, calc(100% - 40px)); margin: 0 auto; }
+    nav {
+      position: sticky; top: 14px; z-index: 20;
+      display: flex; align-items: center; justify-content: space-between;
+      margin: 18px auto 0; width: min(1080px, calc(100% - 40px));
+      padding: 10px 12px 10px 18px;
+      background: rgba(255, 250, 245, 0.78);
+      border: 1px solid rgba(255,255,255,0.7);
+      border-radius: 999px; backdrop-filter: blur(14px); box-shadow: var(--shadow);
+    }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 600; }
+    .dot {
+      width: 34px; height: 34px; border-radius: 50%;
+      background: linear-gradient(145deg, #f3d7c8, #c9d5c4);
+      object-fit: cover; object-position: center 20%;
+    }
+    .links { display: flex; gap: 6px; align-items: center; }
+    .links a { padding: 8px 12px; border-radius: 999px; color: var(--muted); font-size: 14px; }
+    .links a:hover { background: var(--sand); color: var(--ink); }
+    .hire { background: var(--ink) !important; color: #fffaf5 !important; padding: 9px 16px !important; }
+    .hero { padding: 72px 0 36px; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 36px; align-items: center; }
+    .kicker {
+      display: inline-flex; gap: 8px; align-items: center;
+      background: #fff; border: 1px solid var(--line); border-radius: 999px;
+      padding: 6px 12px; font-size: 13px; color: var(--muted); margin-bottom: 18px;
+    }
+    .kicker span { width: 8px; height: 8px; border-radius: 50%; background: #b7c9b0; }
+    h1 { font-family: "Fraunces", serif; font-weight: 500; font-size: clamp(40px, 6vw, 64px); line-height: 1.02; letter-spacing: -0.03em; }
+    h1 em { font-style: italic; color: #a57b6b; }
+    .lead { margin-top: 18px; max-width: 540px; color: var(--muted); font-size: 17px; }
+    .cta { display: flex; gap: 12px; margin-top: 26px; flex-wrap: wrap; }
+    .btn { border: 0; cursor: pointer; border-radius: 999px; padding: 12px 18px; font-family: inherit; font-size: 15px; }
+    .btn-dark { background: var(--ink); color: #fffaf5; }
+    .btn-soft { background: #fff; color: var(--ink); border: 1px solid var(--line); }
+    .pills { display: flex; gap: 8px; margin-top: 28px; flex-wrap: wrap; }
+    .pill { background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 7px 12px; font-size: 13px; color: var(--muted); }
+    .portrait {
+      background: linear-gradient(180deg, #f7e7de, #e7efe8);
+      border-radius: 32px; min-height: 420px; position: relative; overflow: hidden;
+      box-shadow: var(--shadow); display: grid; place-items: end center; padding: 28px;
+    }
+    .avatar {
+      width: 250px; height: 250px; border-radius: 50%;
+      object-fit: cover; object-position: center 20%;
+      border: 10px solid rgba(255,255,255,0.7); margin-bottom: 18px;
+      background: #fff;
+    }
+    .float-card { position: absolute; background: #fff; border-radius: 18px; padding: 12px 14px; box-shadow: var(--shadow); font-size: 13px; }
+    .float-card b { display: block; font-size: 15px; }
+    .fc1 { top: 22px; left: 18px; }
+    .fc2 { bottom: 24px; right: 18px; }
+    section { padding: 54px 0; }
+    .label { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #a57b6b; margin-bottom: 8px; }
+    h2 { font-family: "Fraunces", serif; font-weight: 500; font-size: clamp(30px, 4vw, 44px); letter-spacing: -0.03em; }
+    .sub { color: var(--muted); margin-top: 8px; max-width: 560px; }
+    .about-grid { margin-top: 28px; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 18px; }
+    .card { background: var(--card); border: 1px solid rgba(255,255,255,0.8); border-radius: 24px; padding: 22px; box-shadow: var(--shadow); }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 18px; }
+    .stat { background: var(--sand); border-radius: 16px; padding: 14px; }
+    .stat b { display: block; font-family: "Fraunces", serif; font-size: 22px; }
+    .stat span { color: var(--muted); font-size: 13px; }
+    .meta { display: grid; gap: 10px; }
+    .meta div { background: #fff; border-radius: 16px; padding: 14px 16px; border: 1px solid var(--line); }
+    .meta small { color: var(--muted); display: block; }
+    .chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+    .chip { background: var(--peach); border-radius: 999px; padding: 6px 10px; font-size: 13px; }
+    .chip.sage { background: var(--sage); }
+    .chip.sky { background: var(--sky); }
+    .skills { margin-top: 26px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .skill h3 { font-size: 20px; margin-bottom: 6px; }
+    .num { font-family: "Fraunces", serif; color: #c4a394; font-size: 28px; }
+    .tools { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .tool { background: var(--bg); border-radius: 12px; padding: 8px 10px; font-size: 13px; }
+    .achievements { margin-top: 26px; display: grid; gap: 12px; }
+    .ach { display: grid; grid-template-columns: 110px 1fr; gap: 16px; align-items: start; background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 16px 18px; }
+    .year { background: var(--sage); border-radius: 14px; text-align: center; padding: 10px 6px; font-weight: 600; font-size: 13px; }
+    .contact { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 18px; }
+    .contact-links { display: grid; gap: 10px; margin-top: 18px; }
+    .contact-links a { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 12px 14px; display: flex; justify-content: space-between; gap: 12px; }
+    form { display: grid; gap: 10px; }
+    input, textarea { width: 100%; border: 1px solid var(--line); background: #fff; border-radius: 14px; padding: 12px 14px; font-family: inherit; font-size: 15px; color: var(--ink); }
+    textarea { min-height: 110px; resize: vertical; }
+    footer { text-align: center; color: var(--muted); padding: 10px 0 36px; font-size: 13px; }
+    @media (max-width: 820px) {
+      .links a:not(.hire) { display: none; }
+      .hero, .about-grid, .skills, .contact, .ach { grid-template-columns: 1fr; }
+      .portrait { min-height: 320px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="brand" href="#atas"><img class="dot" src="foto.jpg" alt="Alifya" style="object-fit:cover;object-position:center 20%;"> Alifya Santoso</a>
+    <div class="links">
+      <a href="#about">About</a>
+      <a href="#skills">What I Can Do</a>
+      <a href="#achievement">Achievement</a>
+      <a href="#contact" class="hire">Hubungi</a>
+    </div>
+  </nav>
+
+  <header class="wrap hero" id="atas">
+    <div>
+      <div class="kicker"><span></span> Semester 1 · Teknik Informatika Unesa</div>
+      <h1>Halo, aku <em>Alifya Deswinta Putri Santoso</em>.</h1>
+      <p class="lead">
+        Mahasiswa semester 1 S1 Teknik Informatika di Universitas Negeri Surabaya.
+        Tertarik pada pengembangan web dan game, sedang membangun dasar pemrograman, dan terbiasa mencatat serta merapikan data.
+      </p>
+      <div class="cta">
+        <a class="btn btn-dark" href="#contact">Mari kenalan</a>
+        <a class="btn btn-soft" href="CV-Alifya.pdf" download>Download CV</a>
+      </div>
+      <div class="pills">
+        <span class="pill">Web & game</span>
+        <span class="pill">C++ dasar</span>
+        <span class="pill">Free Fire · ML · Roblox</span>
+        <span class="pill">Tren makeup TikTok</span>
+      </div>
+    </div>
+    <div class="portrait">
+      <div class="float-card fc1"><small>Prodi</small><b>Teknik Informatika</b></div>
+      <img class="avatar" src="foto.jpg" alt="Foto Alifya Deswinta Putri Santoso">
+      <div class="float-card fc2"><small>Asal</small><b>Mojokerto</b></div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="wrap">
+      <p class="label">About Me</p>
+      <h2>Profil singkat.</h2>
+      <p class="sub">Identitas kuliah, pendidikan, dan aktivitas.</p>
+      <div class="about-grid">
+        <article class="card">
+          <h3 style="font-family:Fraunces,serif;font-size:28px;font-weight:500;">Alifya Deswinta Putri Santoso</h3>
+          <p style="color:var(--muted);margin-top:8px;">
+            Lulusan SMAN 3 Mojokerto, Kurikulum Merdeka. Sekarang menempuh S1 Teknik Informatika di Fakultas Teknik, Universitas Negeri Surabaya.
+            Pernah mengelola keuangan ekstrakurikuler dan berjualan aksesori manik.
+            Hobi saat ini main Free Fire, Mobile Legends, dan Roblox, plus mengikuti tren makeup di TikTok.
+          </p>
+          <div class="stats">
+            <div class="stat"><b>2026</b><span>Angkatan</span></div>
+            <div class="stat"><b>Sem 1</b><span>Status kuliah</span></div>
+            <div class="stat"><b>Unesa</b><span>Kampus</span></div>
+          </div>
+          <div class="chips">
+            <span class="chip">Free Fire</span>
+            <span class="chip sage">Mobile Legends</span>
+            <span class="chip sky">Roblox · makeup TikTok</span>
+          </div>
+        </article>
+        <aside class="meta">
+          <div><small>Nama</small><b>Alifya Deswinta Putri Santoso</b></div>
+          <div><small>NIM</small><b>26051204184</b></div>
+          <div><small>Prodi</small><b>S1 Teknik Informatika</b></div>
+          <div><small>Pendidikan</small><b>Universitas Negeri Surabaya</b></div>
+          <div><small>SMA</small><b>SMAN 3 Mojokerto, 2023–2026</b></div>
+          <div><small>Aktivitas</small><b>Kuliah, game, tren makeup TikTok</b></div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <p class="label">What I Can Do</p>
+      <h2>Yang bisa aku kerjakan.</h2>
+      <div class="skills">
+        <article class="card skill">
+          <div class="num">01</div>
+          <h3>Data dan dokumen</h3>
+          <p style="color:var(--muted)">Mencatat pesanan, kas, dan merapikan laporan sederhana. Terbiasa memakai komputer untuk dokumen.</p>
+          <div class="tools"><span class="tool">Microsoft Word</span><span class="tool">Pencatatan keuangan</span><span class="tool">Canva</span></div>
+        </article>
+        <article class="card skill">
+          <div class="num">02</div>
+          <h3>Dasar pemrograman</h3>
+          <p style="color:var(--muted)">Sedang belajar C++ lewat mata kuliah semester 1. Minat ke pengembangan web dan game, karena sehari-hari juga main Free Fire, Mobile Legends, dan Roblox.</p>
+          <div class="tools"><span class="tool">C++</span><span class="tool">Free Fire</span><span class="tool">ML · Roblox</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="achievement">
+    <div class="wrap">
+      <p class="label">Achievement</p>
+      <h2>Pengalaman dan pencapaian.</h2>
+      <div class="achievements">
+        <article class="ach">
+          <div class="year">2024–2026</div>
+          <div>
+            <b>Penjual aksesori manik</b>
+            <p style="color:var(--muted)">Mojokerto. Membuat dan menjual gelang, kalung, serta cincin. Mencatat pesanan dan hasil penjualan, serta mengatur stok bahan.</p>
+          </div>
+        </article>
+        <article class="ach">
+          <div class="year">2024–2025</div>
+          <div>
+            <b>Bendahara Ekstrakurikuler Bahasa Jepang</b>
+            <p style="color:var(--muted)">SMAN 3 Kota Mojokerto. Mencatat kas, merapikan laporan keuangan sederhana, dan membantu koordinasi acara.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap contact">
+      <div>
+        <p class="label">Contact</p>
+        <h2>Yuk ngobrol.</h2>
+        <p class="sub">Email dan LinkedIn sudah terpasang. GitHub belum dibuat.</p>
+        <div class="contact-links">
+          <a href="mailto:alifyadeswintaputri@gmail.com">Email <b>alifyadeswintaputri@gmail.com</b></a>
+          <a href="https://www.linkedin.com/in/alifya-deswinta-putri-santoso-097a11440" target="_blank" rel="noreferrer">LinkedIn <b>profil</b></a>
+          <a href="CV-Alifya.pdf" download>CV / Resume <b>unduh</b></a>
+          <a href="tel:+6285784587990">Telepon <b>0857-8458-7990</b></a>
+          <a href="#contact">GitHub <b>belum punya</b></a>
+        </div>
+      </div>
+      <form class="card" onsubmit="event.preventDefault(); alert('Pesan ini belum terkirim otomatis. Hubungi lewat email alifyadeswintaputri@gmail.com');">
+        <input type="text" placeholder="Nama" required />
+        <input type="email" placeholder="Email" required />
+        <textarea placeholder="Pesan" required></textarea>
+        <button class="btn btn-dark" type="submit">Kirim pesan</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>Alifya Deswinta Putri Santoso · 26051204184 · S1 Teknik Informatika Unesa</footer>
+</body>
+</html>
